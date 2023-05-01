@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define MAX 4
+int stack_arr[MAX];
+int top=-1;
+int data;
+void push(int data){
+    printf("\nEnter the data: ");
+    scanf("%d",&data);
+    top=top+1;
+    stack_arr[top]=data;
+    main();
+}
+int pop(){
+    
+    top=top-1;
+    main();
+}
+void topp(){
+    if(top==-1){
+        printf("Top is Empty");
+    }
+    else
+        printf("%d is top",stack_arr[top]);
+    
+    main();
+}
+void print(){
+    int i;
+    if(top==-1){
+        printf("\nStack underflow");
+        main();
+        return;
+    }
+    if(top==MAX){
+        printf("\nStack overflow");
+        main();
+        return;
+    }
+    for(i=top;i>=0;i--){
+        printf("%d\t",stack_arr[i]);
+    }
+    main();
+}
+int main()
+{
+    int choice,data;
+    printf("\n1.PUSH");
+    printf("\n2.POP");
+    printf("\n3.PRINT \n4.Top");
+    printf("\n4.EXIT");
+    printf("\nEnter your choice: ");
+    scanf("%d",&choice);
+    switch(choice){
+        case 1:
+        push(data);
+        break;
+        case 2:
+        pop();
+        break;
+        case 3:
+        print();
+        break;
+        case 4:
+        topp();
+        break;
+        case 5:
+        exit(0);
+        default:
+        printf("\nEnter correct choice");
+    }
+    return 0;
+}
